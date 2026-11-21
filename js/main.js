@@ -15,17 +15,20 @@
            so far left = 100% artwork, far right = 100% photo, centre =
            exact 50/50 split. Headings cross-fade the same way: the side
            the mouse is on stays full, the opposite fades to 0 at the
-           far edge. The wipe eases toward its target (.3s CSS transition).
+           far edge. The wipe eases toward its target (.5s CSS transition).
            Mouseleave resets to the 50/50 resting state. */
         function setSplit(p) {
           p = Math.max(0, Math.min(1, p));
           wipe.style.clipPath = 'inset(0 ' + (p * 100) + '% 0 0)';
           sideL.style.opacity = p <= 0.5 ? 1 : 1 - (p - 0.5) / 0.5;
           sideR.style.opacity = p >= 0.5 ? 1 : p / 0.5;
-          /* Adham's revealed photo also drifts slightly opposite the
-             mouse (nose shifts left as the mouse moves right). */
+          /* Adham's portraits slide in opposite directions as the wipe
+             moves: the painted layer drifts right as the mouse goes left,
+             the photo drifts left as the mouse goes right. Both ease
+             over ~0.5s via the CSS transitions. */
           var w = hero.getBoundingClientRect().width;
-          photo.style.transform = 'translateX(' + ((0.5 - p) * w * 0.05) + 'px)';
+          wipe.style.transform = 'translateX(' + ((0.5 - p) * w * 0.11) + 'px)';
+          photo.style.transform = 'translateX(' + ((0.5 - p) * w * 0.08) + 'px)';
         }
         setSplit(0.5);
         /* The wipe is driven by the mouse anywhere across the full
