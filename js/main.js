@@ -46,6 +46,45 @@
         sideL.addEventListener('click', function () { setSplit(0); });
         sideR.addEventListener('click', function () { setSplit(1); });
 
+        /* ---------- Work cards: Adham-style collapsed cards ---------- */
+        /* Adham's work cards show only a preview, title, subtitle and a
+           chevron; the detail opens on click. Build that from the full
+           cards: subtitle + chevron on top, problem/solution/benefit and
+           the how-it-works panel wrapped in a hidden .detail. */
+        var cardSubs = ['AI system', 'Roadmap', 'Reporting tool', 'Inventory system', 'Accounting', 'Feedback analytics', 'Online store', 'Data automation'];
+        document.querySelectorAll('.card').forEach(function (card, i) {
+          var meta = card.querySelector('.card-meta');
+          var top = card.querySelector('.card-top');
+          var sub = document.createElement('p');
+          sub.className = 'card-sub';
+          sub.textContent = cardSubs[i] || '';
+          var chev = document.createElement('span');
+          chev.className = 'card-chev';
+          chev.setAttribute('aria-hidden', 'true');
+          chev.textContent = '\u203a';
+          top.appendChild(chev);
+          var detail = document.createElement('div');
+          detail.className = 'detail';
+          Array.from(meta.children).forEach(function (child) {
+            if (child !== top) detail.appendChild(child);
+          });
+          meta.appendChild(sub);
+          meta.appendChild(detail);
+          card.classList.add('collapsed');
+          top.setAttribute('role', 'button');
+          top.setAttribute('tabindex', '0');
+          top.setAttribute('aria-expanded', 'false');
+          var toggleCard = function () {
+            var open = card.classList.toggle('open');
+            card.classList.toggle('collapsed', !open);
+            top.setAttribute('aria-expanded', open ? 'true' : 'false');
+          };
+          top.addEventListener('click', toggleCard);
+          top.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleCard(); }
+          });
+        });
+
         /* ---------- "See how it works" panels ---------- */
         /* Technical details exist on the page only inside these
            panels, which stay hidden until the visitor opens one. */
