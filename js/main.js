@@ -22,8 +22,8 @@
         function setSplit(p) {
           p = Math.max(0, Math.min(1, p));
           wipe.style.clipPath = 'inset(0 ' + (p * 100) + '% 0 0)';
-          sideL.style.opacity = p <= 0.5 ? 1 : 1 - (p - 0.5) / 0.5;
-          sideR.style.opacity = p >= 0.5 ? 1 : p / 0.5;
+          sideL.style.opacity = p <= 0.5 ? 1 : 1 - (p - 0.5) / 0.5 * 0.65;
+            sideR.style.opacity = p >= 0.5 ? 1 : 0.35 + (p / 0.5) * 0.65;
           /* The portraits never move: both layers stay perfectly
              registered, only the wipe edge (clip-path) moves, so the
              two backgrounds can never merge or show side by side. */
