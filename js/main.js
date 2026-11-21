@@ -6,6 +6,7 @@
         var hero = document.getElementById('heroSec');
         var sideL = document.getElementById('sideSolver');
         var sideR = document.getElementById('sideBuilder');
+        var photo = document.getElementById('photoLayer');
 
         /* ---------- Adham-style wipe ---------- */
         /* Two registered portraits stacked: photo underneath, artwork
@@ -14,13 +15,17 @@
            so far left = 100% artwork, far right = 100% photo, centre =
            exact 50/50 split. Headings cross-fade the same way: the side
            the mouse is on stays full, the opposite fades to 0 at the
-           far edge. Direct mousemove update, no tween. Mouseleave
-           resets to the 50/50 resting state. */
+           far edge. The wipe eases toward its target (.3s CSS transition).
+           Mouseleave resets to the 50/50 resting state. */
         function setSplit(p) {
           p = Math.max(0, Math.min(1, p));
           wipe.style.clipPath = 'inset(0 ' + (p * 100) + '% 0 0)';
           sideL.style.opacity = p <= 0.5 ? 1 : 1 - (p - 0.5) / 0.5;
           sideR.style.opacity = p >= 0.5 ? 1 : p / 0.5;
+          /* Adham's revealed photo also drifts slightly opposite the
+             mouse (nose shifts left as the mouse moves right). */
+          var w = hero.getBoundingClientRect().width;
+          photo.style.transform = 'translateX(' + ((0.5 - p) * w * 0.05) + 'px)';
         }
         setSplit(0.5);
         /* The wipe is driven by the mouse anywhere across the full
