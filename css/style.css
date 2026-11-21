@@ -84,14 +84,14 @@
         display:grid; grid-template-columns: 1fr minmax(320px, 400px) 1fr;
         align-items:center; gap:20px; position:relative;
       }
-      .side{ position:relative; z-index:3; padding-bottom:8px; transition:opacity .18s ease; }
+      .side{ position:relative; z-index:3; padding:55px 0 8px; transition:opacity .18s ease; }
       /* Headings cross-fade like Adham: the side the mouse is on stays
          full, the opposite side fades out. Resting state is both full. */
       .side h2{
-        margin:0; font-size:clamp(36px, 2.6vw, 50px); font-weight:700;
-        letter-spacing:-1px; color:#333; line-height:1.1; cursor:default;
+        margin:0; font-size:clamp(44px, 3.4vw, 64px); font-weight:700;
+        letter-spacing:-1px; color:#333; line-height:1.05; cursor:default;
       }
-      .side.right h2{ font-family:"IBM Plex Mono", monospace; font-weight:700; letter-spacing:-1.6px; font-size:clamp(32px, 2.3vw, 44px); line-height:1.15; }
+      .side.right h2{ font-family:"IBM Plex Mono", monospace; font-weight:700; letter-spacing:-1.6px; font-size:clamp(36px, 2.7vw, 52px); line-height:1.1; }
       .side p{ margin:16px 0 0; font-size:17px; line-height:1.5; color:var(--muted); max-width:335px; font-weight:500; }
       .side .tag{
         display:inline-block; margin-top:12px; font-family:"IBM Plex Mono", monospace;
@@ -348,7 +348,7 @@
       @media (max-width: 860px){
         .hero-grid{ grid-template-columns:1fr; gap:0; }
         .portrait-wrap{ order:1; margin-top:6px; }
-        .side{ padding-bottom:0; text-align:center; }
+        .side{ padding:0; text-align:center; }
         .side p{ margin-left:auto; margin-right:auto; }
         .side.left{ order:2; padding-top:26px; }
         .side.right{ order:3; margin-top:24px; }
