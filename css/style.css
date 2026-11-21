@@ -400,16 +400,19 @@
         header.site.nav-open nav.main a{ padding:14px 4px; font-size:18px; border-top:1px solid #2a2723; }
         header.site.nav-open .socials{ display:flex; flex-basis:100%; order:4; margin-left:0; padding:6px 0 12px; }
         .hero{ padding:16px 16px 0; }
-        .hero-grid{ grid-template-columns:1fr; gap:0; }
+        .hero-grid{ grid-template-columns:1fr 120px 1fr; gap:12px; align-items:center; }
         .hero-grid > *{ min-width:0; }
-        .portrait-wrap{ order:2; margin-top:6px; min-width:0; width:100%; }
+        .portrait-wrap{ order:2; margin-top:0; min-width:0; width:120px; }
         .side{ padding:0; text-align:center; min-width:0; }
         .side h2{ overflow-wrap:break-word; }
         .side p{ margin-left:auto; margin-right:auto; }
         .side .tag{ max-width:100%; overflow-wrap:break-word; }
-        .side.left{ order:1; padding-top:6px; }
-        .side.right{ order:3; margin-top:24px; }
-        .portrait{ max-height:480px; max-width:100%; }
+        .side.left{ order:1; padding-top:0; text-align:right; }
+        .side h2{ font-size:20px; }
+        .side.right h2{ font-size:18px; }
+        .side p, .side .tag, .half-label{ display:none; }
+        .side.right{ order:3; margin-top:0; text-align:left; }
+        .portrait{ max-height:150px; max-width:120px; }
         .work-head .rule{ min-width:0; }
         .cards{ margin:0; }
         .card{ flex-basis:85%; }
@@ -548,8 +551,6 @@
         .facts img{ order:2; }
         .facts ul{ order:1; text-align:center; }
         .page-lede, .page-intro{ hyphens:none; }
-        .side h2{ font-size:28px; }
-        .side.right h2{ font-size:24px; }
         .card-top h3{ white-space:normal; }
         .blog-list{ margin-top:20px; }
         .form-band h2{ font-size:36px !important; }
