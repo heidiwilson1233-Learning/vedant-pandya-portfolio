@@ -114,6 +114,48 @@
           revealEls.forEach(function (el) { io.observe(el); });
         }
 
+
+        /* ---------- Work carousel: show 3, scroll right for the rest ---------- */
+        var strip = document.querySelector('.cards');
+        var prevBtn = document.getElementById('workPrev');
+        var nextBtn = document.getElementById('workNext');
+        if (strip && prevBtn && nextBtn) {
+          var GAP = 30;
+          function cardStep() {
+            var card = strip.querySelector('.card');
+            return card ? card.getBoundingClientRect().width + GAP : 400;
+          }
+          function updateArrows() {
+            prevBtn.disabled = strip.scrollLeft <= 4;
+            nextBtn.disabled = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 4;
+          }
+          nextBtn.addEventListener('click', function () {
+            strip.scrollBy({ left: cardStep(), behavior: reduceMotion ? 'auto' : 'smooth' });
+          });
+          prevBtn.addEventListener('click', function () {
+            strip.scrollBy({ left: -cardStep(), behavior: reduceMotion ? 'auto' : 'smooth' });
+          });
+          strip.addEventListener('scroll', updateArrows, { passive: true });
+          window.addEventListener('resize', updateArrows);
+          /* Drag to scroll with the mouse; a real drag must not toggle a card open. */
+          var downX = 0, startLeft = 0, dragging = false;
+          strip.addEventListener('pointerdown', function (e) {
+            if (e.pointerType !== 'mouse') return;
+            downX = e.clientX; startLeft = strip.scrollLeft; dragging = false;
+          });
+          strip.addEventListener('pointermove', function (e) {
+            if (downX === 0) return;
+            var dx = e.clientX - downX;
+            if (Math.abs(dx) > 6) { dragging = true; strip.scrollLeft = startLeft - dx; }
+          });
+          ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (ev) {
+            strip.addEventListener(ev, function () { downX = 0; });
+          });
+          strip.addEventListener('click', function (e) {
+            if (dragging) { e.preventDefault(); e.stopPropagation(); dragging = false; }
+          }, true);
+          updateArrows();
+        }
         document.getElementById('toTop').addEventListener('click', function () {
           window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
         });
