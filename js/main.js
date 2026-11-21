@@ -23,11 +23,18 @@
           sideR.style.opacity = p >= 0.5 ? 1 : p / 0.5;
         }
         setSplit(0.5);
-        hero.addEventListener('mousemove', function (e) {
+        /* The wipe is driven by the mouse anywhere across the full
+           window width, not only inside the hero box — so moving to
+           the far left / far right edges of the screen still works.
+           p is measured against the hero's own box and clamped 0-1.
+           When the mouse is above / below the hero (e.g. over the
+           header), it returns to the 50/50 resting state. */
+        window.addEventListener('mousemove', function (e) {
           var r = hero.getBoundingClientRect();
+          if (e.clientY < r.top || e.clientY > r.bottom) { setSplit(0.5); return; }
           setSplit((e.clientX - r.left) / r.width);
         });
-        hero.addEventListener('mouseleave', function () {
+        document.addEventListener('mouseleave', function () {
           setSplit(0.5);
         });
         /* Touch and click: tapping a side shows that side fully. */
