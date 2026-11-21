@@ -155,6 +155,22 @@
           }, true);
           updateArrows();
         }
+
+        /* ---------- Mobile menu ---------- */
+        var menuBtn = document.getElementById('menuBtn');
+        var siteHeader = document.querySelector('header.site');
+        if (menuBtn && siteHeader) {
+          menuBtn.addEventListener('click', function () {
+            var open = siteHeader.classList.toggle('nav-open');
+            menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          });
+          siteHeader.querySelectorAll('nav.main a').forEach(function (a) {
+            a.addEventListener('click', function () {
+              siteHeader.classList.remove('nav-open');
+              menuBtn.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
         var toTopBtn = document.getElementById('toTop');
         if (toTopBtn) toTopBtn.addEventListener('click', function () {
           window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
