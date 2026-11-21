@@ -33,13 +33,15 @@
 .chat-body{ padding:14px; display:flex; flex-direction:column; gap:10px; min-height:216px; }
 .msg{ max-width:85%; padding:9px 12px; border-radius:12px; font-size:15px; line-height:1.45; opacity:0; animation:msg-in 16s infinite; }
 .msg.customer{ align-self:flex-end; background:#2f6f66; color:#fff; border-bottom-right-radius:4px; animation-delay:.6s; }
-.msg.typing{ align-self:flex-start; background:#fff; border:1px solid var(--card-edge); border-bottom-left-radius:4px; display:flex; gap:5px; padding:12px 14px; animation-delay:2.2s; }
+.msg.typing{ align-self:flex-start; background:#fff; border:1px solid var(--card-edge); border-bottom-left-radius:4px; display:flex; gap:5px; padding:12px 14px; animation:typing-out 16s infinite; animation-delay:2.2s; }
 .msg.typing span{ width:7px; height:7px; border-radius:50%; background:#9a948a; animation:typing 1.2s infinite; }
 .msg.typing span:nth-child(2){ animation-delay:.2s; }
 .msg.typing span:nth-child(3){ animation-delay:.4s; }
 .msg.ai{ align-self:flex-start; background:#fff; border:1px solid var(--card-edge); border-bottom-left-radius:4px; animation-delay:4s; }
 .msg.resolved{ align-self:center; background:#e9f4ec; color:#2f6f66; font-size:13.5px; font-weight:600; border-radius:999px; padding:7px 14px; animation-delay:6.4s; }
 @keyframes msg-in{ 0%{ opacity:0; transform:translateY(6px); } 4%, 86%{ opacity:1; transform:translateY(0); } 96%, 100%{ opacity:0; transform:translateY(0); } }
+/* Typing dots show, then vanish just as the AI answer arrives */
+@keyframes typing-out{ 0%{ opacity:0; transform:translateY(6px); } 3%, 14%{ opacity:1; transform:translateY(0); } 18%, 100%{ opacity:0; transform:translateY(0); } }
 @keyframes typing{ 0%, 60%, 100%{ transform:translateY(0); opacity:.5; } 30%{ transform:translateY(-4px); opacity:1; } }
 
 /* 3-step flow demo — steps fade in one by one, arrows pulse (delays set inline) */
