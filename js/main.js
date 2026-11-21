@@ -36,7 +36,8 @@
            p is measured against the hero's own box and clamped 0-1.
            When the mouse is above / below the hero (e.g. over the
            header), it returns to the 50/50 resting state. */
-        window.addEventListener('mousemove', function (e) {
+        window.addEventListener('pointermove', function (e) {
+          if (e.pointerType === 'touch') return;
           if (Date.now() - lastTap < 1500) return;
           var r = hero.getBoundingClientRect();
           if (e.clientY < r.top || e.clientY > r.bottom) { setSplit(0.5); return; }
