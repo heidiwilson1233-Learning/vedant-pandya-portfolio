@@ -1,8 +1,10 @@
 (function () {
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        /* ---------- Adham-style wipe hero ---------- */
+        /* ---------- Adham-style wipe hero (homepage only) ---------- */
         var wipe = document.getElementById('wipe');
+        if (wipe && document.getElementById('heroSec') && document.getElementById('sideSolver')
+            && document.getElementById('sideBuilder') && document.getElementById('photoLayer')) {
         var hero = document.getElementById('heroSec');
         var sideL = document.getElementById('sideSolver');
         var sideR = document.getElementById('sideBuilder');
@@ -44,6 +46,7 @@
         /* Touch and click: tapping a side shows that side fully. */
         sideL.addEventListener('click', function () { setSplit(0); });
         sideR.addEventListener('click', function () { setSplit(1); });
+        }
 
         /* ---------- Work cards: Adham-style collapsed cards ---------- */
         /* Adham's work cards show only a preview, title, subtitle and a
@@ -152,8 +155,10 @@
           }, true);
           updateArrows();
         }
-        document.getElementById('toTop').addEventListener('click', function () {
+        var toTopBtn = document.getElementById('toTop');
+        if (toTopBtn) toTopBtn.addEventListener('click', function () {
           window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
         });
-        document.getElementById('year').textContent = new Date().getFullYear();
+        var yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
       })();
