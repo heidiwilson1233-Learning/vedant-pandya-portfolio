@@ -58,12 +58,11 @@
           </div>
 
           <div class="portrait-wrap">
-            <div class="portrait" id="portrait" role="img" aria-label="Full split-portrait artwork of Vedant Pandya, shown whole — his complete face with PROBLEM SOLVER on the left: a hand-made collage of sticky notes reading Understand the real problem, Make work simpler and Build what people need, plus charts and customer conversation symbols; and AI BUILDER on the right: clean connected system diagrams, dashboard charts and data symbols. Move your cursor across the hero to highlight either side; the full portrait always stays visible and never moves or crops.">
-              <picture><source srcset="assets/hero.webp" type="image/webp"><img class="full" src="assets/hero.jpg" alt="" width="1341" height="1173" fetchpriority="high"></picture>
-              <span class="glow l" aria-hidden="true"></span>
-              <span class="glow r" aria-hidden="true"></span>
+            <div class="portrait" id="portrait" role="img" aria-label="Full split-portrait artwork of Vedant Pandya, shown whole — his complete face with PROBLEM SOLVER on the left: a hand-made collage of sticky notes reading Understand the real problem, Make work simpler and Build what people need, plus charts and customer conversation symbols; and AI BUILDER on the right: clean connected system diagrams, dashboard charts and data symbols. Move your cursor across the hero to wipe between the illustrated portrait and the real photo; at rest it is a 50/50 split.">
+              <picture class="layer photo"><source srcset="assets/photo.webp" type="image/webp"><img src="assets/photo.jpg" alt="" width="1341" height="1173"></picture>
+              <picture class="layer wipe" id="wipe"><source srcset="assets/hero.webp" type="image/webp"><img src="assets/hero.jpg" alt="" width="1341" height="1173" fetchpriority="high"></picture>
             </div>
-            <p class="drag-hint">&#8592;&nbsp; move across to highlight a side &nbsp;&#8594;</p>
+            <p class="drag-hint">&#8592;&nbsp; move across to wipe between the two portraits &nbsp;&#8594;</p>
           </div>
 
           <div class="side right" id="sideBuilder">

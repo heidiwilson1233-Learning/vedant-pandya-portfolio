@@ -1,26 +1,38 @@
 (function () {
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        /* ---------- Full portrait ---------- */
-        /* The portrait is one complete image and is never split,
-           stretched or cropped by interaction. Moving the cursor
-           across the hero only highlights the side it is on (a soft
-           overlay on that half of the portrait, plus the other
-           headline fading) — the full face stays visible at all
-           times, wherever the cursor is. */
-        var portrait = document.getElementById('portrait');
+        /* ---------- Adham-style wipe hero ---------- */
+        var wipe = document.getElementById('wipe');
         var hero = document.getElementById('heroSec');
+        var sideL = document.getElementById('sideSolver');
+        var sideR = document.getElementById('sideBuilder');
 
+        /* ---------- Adham-style wipe ---------- */
+        /* Two registered portraits stacked: photo underneath, artwork
+           on top. Mouse x over the hero gives p (0 = far left, 1 = far
+           right, 0.5 = centre/rest). Top layer shows (1-p) of its width,
+           so far left = 100% artwork, far right = 100% photo, centre =
+           exact 50/50 split. Headings cross-fade the same way: the side
+           the mouse is on stays full, the opposite fades to 0 at the
+           far edge. Direct mousemove update, no tween. Mouseleave
+           resets to the 50/50 resting state. */
+        function setSplit(p) {
+          p = Math.max(0, Math.min(1, p));
+          wipe.style.clipPath = 'inset(0 ' + (p * 100) + '% 0 0)';
+          sideL.style.opacity = p <= 0.5 ? 1 : 1 - (p - 0.5) / 0.5;
+          sideR.style.opacity = p >= 0.5 ? 1 : p / 0.5;
+        }
+        setSplit(0.5);
         hero.addEventListener('mousemove', function (e) {
-          var r = portrait.getBoundingClientRect();
-          hero.setAttribute('data-active', e.clientX < r.left + r.width / 2 ? 'left' : 'right');
+          var r = hero.getBoundingClientRect();
+          setSplit((e.clientX - r.left) / r.width);
         });
         hero.addEventListener('mouseleave', function () {
-          hero.removeAttribute('data-active');
+          setSplit(0.5);
         });
-        /* Touch and click: tapping a side highlights that side. */
-        document.getElementById('sideSolver').addEventListener('click', function () { hero.setAttribute('data-active', 'left'); });
-        document.getElementById('sideBuilder').addEventListener('click', function () { hero.setAttribute('data-active', 'right'); });
+        /* Touch and click: tapping a side shows that side fully. */
+        sideL.addEventListener('click', function () { setSplit(0); });
+        sideR.addEventListener('click', function () { setSplit(1); });
 
         /* ---------- "See how it works" panels ---------- */
         /* Technical details exist on the page only inside these
