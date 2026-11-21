@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2400" viewBox="0 0 1600 2400">
+  <rect width="1600" height="2400" fill="#10243A"/>
+  <!-- teal top band -->
+  <rect x="0" y="0" width="1600" height="18" fill="#007F86"/>
+  <rect x="0" y="2382" width="1600" height="18" fill="#007F86"/>
+  <!-- GPU chip motif -->
+  <rect x="480" y="300" width="640" height="420" rx="24" fill="#0C1B2E" stroke="#007F86" stroke-width="6"/>
+  <rect x="580" y="400" width="440" height="220" rx="12" fill="#007F86"/>
+  <text x="800" y="530" font-family="sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle">GPU</text>
+  <!-- pins -->
+  <g stroke="#687580" stroke-width="10">
+    <line x1="560" y1="340" x2="560" y2="280"/><line x1="680" y1="340" x2="680" y2="280"/><line x1="800" y1="340" x2="800" y2="280"/><line x1="920" y1="340" x2="920" y2="280"/><line x1="1040" y1="340" x2="1040" y2="280"/>
+    <line x1="560" y1="680" x2="560" y2="740"/><line x1="680" y1="680" x2="680" y2="740"/><line x1="800" y1="680" x2="800" y2="740"/><line x1="920" y1="680" x2="920" y2="740"/><line x1="1040" y1="680" x2="1040" y2="740"/>
+  </g>
+  <!-- KV cache blocks flowing out -->
+  <g>
+    <rect x="300" y="860" width="180" height="110" rx="10" fill="#D97736"/>
+    <rect x="520" y="860" width="180" height="110" rx="10" fill="#D97736"/>
+    <rect x="740" y="860" width="180" height="110" rx="10" fill="#D97736"/>
+    <rect x="960" y="860" width="180" height="110" rx="10" fill="#27845D"/>
+    <rect x="1180" y="860" width="180" height="110" rx="10" fill="#27845D"/>
+    <text x="390" y="930" font-family="sans-serif" font-size="44" font-weight="bold" fill="#FFFFFF" text-anchor="middle">K</text>
+    <text x="610" y="930" font-family="sans-serif" font-size="44" font-weight="bold" fill="#FFFFFF" text-anchor="middle">V</text>
+    <text x="830" y="930" font-family="sans-serif" font-size="44" font-weight="bold" fill="#FFFFFF" text-anchor="middle">K</text>
+    <text x="1050" y="930" font-family="sans-serif" font-size="44" font-weight="bold" fill="#FFFFFF" text-anchor="middle">V</text>
+    <text x="1270" y="930" font-family="sans-serif" font-size="44" font-weight="bold" fill="#FFFFFF" text-anchor="middle">K</text>
+  </g>
+  <text x="800" y="1060" font-family="sans-serif" font-size="40" fill="#DDEFF5" text-anchor="middle">keys and values, cached — tokens, served fast</text>
+  <!-- Title -->
+  <text x="800" y="1300" font-family="sans-serif" font-size="110" font-weight="bold" fill="#FFFFFF" text-anchor="middle">THE AI INFERENCE</text>
+  <text x="800" y="1420" font-family="sans-serif" font-size="110" font-weight="bold" fill="#FFFFFF" text-anchor="middle">ENGINEERING ATLAS</text>
+  <text x="800" y="1560" font-family="sans-serif" font-size="46" fill="#DDEFF5" text-anchor="middle">A Visual Guide to GPU Memory, KV Cache,</text>
+  <text x="800" y="1620" font-family="sans-serif" font-size="46" fill="#DDEFF5" text-anchor="middle">Model Serving, Latency Optimization,</text>
+  <text x="800" y="1680" font-family="sans-serif" font-size="46" fill="#DDEFF5" text-anchor="middle">and Production AI Infrastructure</text>
+  <!-- Author -->
+  <line x1="600" y1="1880" x2="1000" y2="1880" stroke="#007F86" stroke-width="4"/>
+  <text x="800" y="1980" font-family="sans-serif" font-size="64" font-weight="bold" fill="#007F86" text-anchor="middle">Eliza Hartmere</text>
+  <text x="800" y="2080" font-family="sans-serif" font-size="44" fill="#687580" text-anchor="middle">Edition 2027</text>
+</svg>

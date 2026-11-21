@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2400" viewBox="0 0 1600 2400">
+  <rect width="1600" height="2400" fill="#10243A"/>
+  <!-- teal bands -->
+  <rect x="0" y="0" width="1600" height="18" fill="#007F86"/>
+  <rect x="0" y="2382" width="1600" height="18" fill="#007F86"/>
+  <!-- memory-record motif: one record travelling through its lifecycle -->
+  <rect x="380" y="300" width="840" height="380" rx="24" fill="#0C1B2E" stroke="#007F86" stroke-width="6"/>
+  <text x="800" y="400" font-family="sans-serif" font-size="52" font-weight="bold" fill="#FFFFFF" text-anchor="middle">MEMORY RECORD</text>
+  <text x="800" y="480" font-family="sans-serif" font-size="40" fill="#DDEFF5" text-anchor="middle">preference: SMS updates</text>
+  <text x="800" y="550" font-family="sans-serif" font-size="36" fill="#687580" text-anchor="middle">source: confirmed by customer</text>
+  <text x="800" y="620" font-family="sans-serif" font-size="36" fill="#687580" text-anchor="middle">provenance: Thursday, 14:02</text>
+  <!-- lifecycle states -->
+  <g font-family="sans-serif" font-size="40" font-weight="bold" text-anchor="middle">
+    <rect x="300" y="820" width="240" height="110" rx="10" fill="#27845D"/>
+    <text x="420" y="890" fill="#FFFFFF">ACTIVE</text>
+    <rect x="580" y="820" width="240" height="110" rx="10" fill="#D97736"/>
+    <text x="700" y="890" fill="#FFFFFF">SUPERSEDED</text>
+    <rect x="860" y="820" width="240" height="110" rx="10" fill="#687580"/>
+    <text x="980" y="890" fill="#FFFFFF">EXPIRED</text>
+    <rect x="1140" y="820" width="240" height="110" rx="10" fill="#C94A4A"/>
+    <text x="1260" y="890" fill="#FFFFFF">DELETED</text>
+  </g>
+  <g stroke="#007F86" stroke-width="6" fill="none" marker-end="url(#arr)">
+    <defs>
+      <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 z" fill="#007F86"/>
+      </marker>
+    </defs>
+    <line x1="540" y1="875" x2="575" y2="875"/>
+    <line x1="820" y1="875" x2="855" y2="875"/>
+    <line x1="1100" y1="875" x2="1135" y2="875"/>
+  </g>
+  <text x="800" y="1030" font-family="sans-serif" font-size="40" fill="#DDEFF5" text-anchor="middle">remembered, updated, forgotten — on purpose</text>
+  <!-- Title -->
+  <text x="800" y="1300" font-family="sans-serif" font-size="110" font-weight="bold" fill="#FFFFFF" text-anchor="middle">THE MEMORY</text>
+  <text x="800" y="1420" font-family="sans-serif" font-size="110" font-weight="bold" fill="#FFFFFF" text-anchor="middle">CONTRACT</text>
+  <text x="800" y="1560" font-family="sans-serif" font-size="46" fill="#DDEFF5" text-anchor="middle">Engineering AI Applications That Remember,</text>
+  <text x="800" y="1620" font-family="sans-serif" font-size="46" fill="#DDEFF5" text-anchor="middle">Update, Forget, and Explain What They Know</text>
+  <!-- Author -->
+  <line x1="600" y1="1880" x2="1000" y2="1880" stroke="#007F86" stroke-width="4"/>
+  <text x="800" y="1980" font-family="sans-serif" font-size="64" font-weight="bold" fill="#007F86" text-anchor="middle">Eliza Hartmere</text>
+  <text x="800" y="2080" font-family="sans-serif" font-size="44" fill="#687580" text-anchor="middle">Edition 2027</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2400" viewBox="0 0 1600 2400">
+  <rect width="1600" height="2400" fill="#10243A"/>
+  <!-- teal bands -->
+  <rect x="0" y="0" width="1600" height="18" fill="#007F86"/>
+  <rect x="0" y="2382" width="1600" height="18" fill="#007F86"/>
+  <!-- system motif: user -> gateway -> intelligence -> tools -> business services -->
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#007F86"/>
+    </marker>
+  </defs>
+  <g font-family="sans-serif" font-size="38" font-weight="bold" text-anchor="middle">
+    <rect x="300" y="300" width="1000" height="90" rx="12" fill="#0C1B2E" stroke="#007F86" stroke-width="4"/>
+    <text x="800" y="358" fill="#FFFFFF">USER REQUEST</text>
+    <rect x="300" y="430" width="1000" height="90" rx="12" fill="#007F86"/>
+    <text x="800" y="488" fill="#FFFFFF">API GATEWAY — AUTHENTICATE</text>
+    <rect x="300" y="560" width="1000" height="90" rx="12" fill="#D97736"/>
+    <text x="800" y="618" fill="#FFFFFF">AI ORCHESTRATION</text>
+    <rect x="300" y="690" width="480" height="90" rx="12" fill="#27845D"/>
+    <text x="540" y="748" fill="#FFFFFF">RETRIEVAL</text>
+    <rect x="820" y="690" width="480" height="90" rx="12" fill="#27845D"/>
+    <text x="1060" y="748" fill="#FFFFFF">TOOLS</text>
+    <rect x="300" y="820" width="1000" height="90" rx="12" fill="#0C1B2E" stroke="#007F86" stroke-width="4"/>
+    <text x="800" y="878" fill="#FFFFFF">AUTHORISED BUSINESS ACTION</text>
+  </g>
+  <g stroke="#007F86" stroke-width="5" fill="none" marker-end="url(#arr)">
+    <line x1="800" y1="390" x2="800" y2="425"/>
+    <line x1="800" y1="520" x2="800" y2="555"/>
+    <line x1="540" y1="650" x2="540" y2="685"/>
+    <line x1="1060" y1="650" x2="1060" y2="685"/>
+    <line x1="800" y1="780" x2="800" y2="815"/>
+  </g>
+  <!-- four-stage method -->
+  <g font-family="sans-serif" font-size="36" font-weight="bold" text-anchor="middle">
+    <rect x="300" y="1010" width="240" height="100" rx="10" fill="#D97736"/>
+    <text x="420" y="1072" fill="#FFFFFF">DECIDE</text>
+    <rect x="580" y="1010" width="240" height="100" rx="10" fill="#007F86"/>
+    <text x="700" y="1072" fill="#FFFFFF">DESIGN</text>
+    <rect x="860" y="1010" width="240" height="100" rx="10" fill="#27845D"/>
+    <text x="980" y="1072" fill="#FFFFFF">PROVE</text>
+    <rect x="1140" y="1010" width="240" height="100" rx="10" fill="#687580"/>
+    <text x="1260" y="1072" fill="#FFFFFF">OPERATE</text>
+  </g>
+  <text x="800" y="1210" font-family="sans-serif" font-size="40" fill="#DDEFF5" text-anchor="middle">decide, design, prove, operate</text>
+  <!-- Title -->
+  <text x="800" y="1400" font-family="sans-serif" font-size="110" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AI TECHNICAL</text>
+  <text x="800" y="1520" font-family="sans-serif" font-size="110" font-weight="bold" fill="#FFFFFF" text-anchor="middle">ARCHITECT</text>
+  <text x="800" y="1640" font-family="sans-serif" font-size="44" fill="#DDEFF5" text-anchor="middle">A Practical Guide to Designing, Building,</text>
+  <text x="800" y="1700" font-family="sans-serif" font-size="44" fill="#DDEFF5" text-anchor="middle">Securing, and Scaling Real-World AI Systems</text>
+  <!-- Author -->
+  <line x1="600" y1="1900" x2="1000" y2="1900" stroke="#007F86" stroke-width="4"/>
+  <text x="800" y="2000" font-family="sans-serif" font-size="64" font-weight="bold" fill="#007F86" text-anchor="middle">Eliza Hartmere</text>
+  <text x="800" y="2100" font-family="sans-serif" font-size="44" fill="#687580" text-anchor="middle">Edition 2027</text>
+</svg>

@@ -19,6 +19,7 @@
            the mouse is on stays full, the opposite fades to 0 at the
            far edge. The wipe eases toward its target (.5s CSS transition).
            Mouseleave resets to the 50/50 resting state. */
+        var lastTap = 0;
         function setSplit(p) {
           p = Math.max(0, Math.min(1, p));
           wipe.style.clipPath = 'inset(0 ' + (p * 100) + '% 0 0)';
@@ -36,6 +37,7 @@
            When the mouse is above / below the hero (e.g. over the
            header), it returns to the 50/50 resting state. */
         window.addEventListener('mousemove', function (e) {
+          if (Date.now() - lastTap < 1500) return;
           var r = hero.getBoundingClientRect();
           if (e.clientY < r.top || e.clientY > r.bottom) { setSplit(0.5); return; }
           setSplit((e.clientX - r.left) / r.width);
@@ -44,8 +46,8 @@
           setSplit(0.5);
         });
         /* Touch and click: tapping a side shows that side fully. */
-        sideL.addEventListener('click', function () { setSplit(0); });
-        sideR.addEventListener('click', function () { setSplit(1); });
+        sideL.addEventListener('click', function () { lastTap = Date.now(); setSplit(0); });
+        sideR.addEventListener('click', function () { lastTap = Date.now(); setSplit(1); });
         }
 
         /* ---------- Work cards: Adham-style collapsed cards ---------- */
