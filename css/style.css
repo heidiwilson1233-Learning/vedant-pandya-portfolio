@@ -32,6 +32,8 @@
         }
       }
       *{ box-sizing:border-box; }
+      /* Visually hidden but readable by Google/AI (used for H1s that must not change the design) */
+      .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
       html{ scroll-behavior:smooth; }
       body{
         margin:0;
