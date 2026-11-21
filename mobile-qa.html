@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mobile QA — 390px comparison</title>
+<style>body{margin:0;display:flex;gap:16px;padding:8px;font-family:sans-serif;background:#fff}h2{margin:4px 0;font-size:18px}iframe{width:390px;height:844px;border:2px solid #c00}</style>
+</head>
+<body>
+<div><h2>Adham — 390px</h2><iframe id="a" title="Adham Dannaway"></iframe></div>
+<div><h2>Vedant — 390px</h2><iframe id="v" title="Vedant Pandya"></iframe></div>
+<script>
+var q = new URLSearchParams(location.search);
+document.getElementById('a').src = q.get('a') || 'https://www.adhamdannaway.com/';
+document.getElementById('v').src = q.get('v') || 'https://vedant-pandya-portfolio.vercel.app/';
+</script>
+</body>
+</html>
