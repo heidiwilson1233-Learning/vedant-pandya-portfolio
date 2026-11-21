@@ -1,0 +1,60 @@
+/* Services page — compact cards + animated vector demos (no video files). */
+.svc-intro{ max-width:640px; color:var(--muted); font-size:18px; line-height:1.55; margin:10px 0 0; }
+.svc-group{ font-size:15px; letter-spacing:1.6px; text-transform:uppercase; color:var(--muted); font-weight:600; margin:44px 0 14px; }
+.svc-group:first-of-type{ margin-top:34px; }
+.svc-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; }
+.svc-card{ background:var(--card); border:1px solid var(--card-edge); border-radius:12px; padding:16px 16px 14px; cursor:pointer; display:flex; flex-direction:column; gap:8px; }
+.svc-card:hover{ border-color:var(--teal); }
+.svc-card.active{ border-color:var(--teal); box-shadow:0 0 0 1px var(--teal); }
+.svc-card h3{ margin:0; font-size:17px; line-height:1.3; }
+.svc-card p{ margin:0; color:var(--muted); font-size:15px; line-height:1.5; flex:1; }
+.svc-search{ font-family:"IBM Plex Mono", monospace; font-size:12px; color:var(--teal-deep); }
+.svc-btn{ align-self:flex-start; background:none; border:1px solid var(--card-edge); border-radius:999px; padding:6px 12px; font:inherit; font-size:13.5px; font-weight:600; cursor:pointer; color:var(--ink-strong); }
+.svc-btn:hover{ background:var(--preview); }
+
+/* Detail panel */
+.svc-detail{ position:relative; margin-top:26px; background:var(--card); border:1px solid var(--card-edge); border-radius:14px; padding:22px 22px 20px; }
+.svc-detail[hidden]{ display:none; }
+.svc-close{ position:absolute; top:10px; right:14px; background:none; border:none; font-size:26px; line-height:1; cursor:pointer; color:var(--muted); padding:6px; }
+.svc-cat{ margin:0 0 4px; font-size:13px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); }
+.svc-detail h2{ margin:0 0 6px; font-size:26px; }
+.svc-line{ margin:0 0 18px; color:var(--muted); font-size:17px; line-height:1.5; max-width:640px; }
+.svc-project{ margin:16px 0 0; }
+.svc-project a, .svc-cta a{ color:var(--teal-deep); font-weight:600; text-decoration:none; }
+.svc-project a:hover, .svc-cta a:hover{ text-decoration:underline; }
+.svc-cta{ margin:10px 0 0; }
+.demo-cap{ margin:12px 0 0; color:var(--muted); font-size:14px; }
+
+/* Chat demo — messages appear in sequence, then the loop restarts */
+.chat-demo{ max-width:460px; border:1px solid var(--card-edge); border-radius:14px; overflow:hidden; background:var(--preview); }
+.chat-head{ display:flex; align-items:center; gap:8px; background:#141210; color:#fff; font-size:14px; font-weight:600; padding:11px 14px; }
+.chat-dot{ width:8px; height:8px; border-radius:50%; background:#4caf7d; flex:none; }
+.chat-live{ margin-left:auto; font-size:12px; font-weight:500; color:#bdb8ac; }
+.chat-body{ padding:14px; display:flex; flex-direction:column; gap:10px; min-height:216px; }
+.msg{ max-width:85%; padding:9px 12px; border-radius:12px; font-size:15px; line-height:1.45; opacity:0; animation:msg-in 16s infinite; }
+.msg.customer{ align-self:flex-end; background:#2f6f66; color:#fff; border-bottom-right-radius:4px; animation-delay:.6s; }
+.msg.typing{ align-self:flex-start; background:#fff; border:1px solid var(--card-edge); border-bottom-left-radius:4px; display:flex; gap:5px; padding:12px 14px; animation-delay:2.2s; }
+.msg.typing span{ width:7px; height:7px; border-radius:50%; background:#9a948a; animation:typing 1.2s infinite; }
+.msg.typing span:nth-child(2){ animation-delay:.2s; }
+.msg.typing span:nth-child(3){ animation-delay:.4s; }
+.msg.ai{ align-self:flex-start; background:#fff; border:1px solid var(--card-edge); border-bottom-left-radius:4px; animation-delay:4s; }
+.msg.resolved{ align-self:center; background:#e9f4ec; color:#2f6f66; font-size:13.5px; font-weight:600; border-radius:999px; padding:7px 14px; animation-delay:6.4s; }
+@keyframes msg-in{ 0%{ opacity:0; transform:translateY(6px); } 4%, 86%{ opacity:1; transform:translateY(0); } 96%, 100%{ opacity:0; transform:translateY(0); } }
+@keyframes typing{ 0%, 60%, 100%{ transform:translateY(0); opacity:.5; } 30%{ transform:translateY(-4px); opacity:1; } }
+
+/* 3-step flow demo — steps fade in one by one, arrows pulse (delays set inline) */
+.flow-demo{ max-width:560px; }
+.flow-step{ display:flex; gap:12px; align-items:flex-start; opacity:0; animation:msg-in 16s infinite; }
+.flow-num{ flex:none; width:30px; height:30px; border-radius:50%; background:#141210; color:#fff; display:grid; place-items:center; font-size:14px; font-weight:700; }
+.flow-step p{ margin:2px 0 0; font-size:16px; line-height:1.5; }
+.flow-arrow{ color:var(--teal-deep); font-size:18px; line-height:1; margin:2px 0 2px 8px; opacity:0; animation:msg-in 16s infinite; }
+
+@media (max-width: 960px){
+  .svc-grid{ grid-template-columns:repeat(2, 1fr); }
+}
+@media (max-width: 560px){
+  .svc-grid{ grid-template-columns:1fr; }
+  .svc-detail{ padding:18px 16px 16px; }
+  .svc-detail h2{ font-size:22px; }
+  .chat-body{ min-height:200px; }
+}
