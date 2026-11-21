@@ -54,7 +54,7 @@
       .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; min-height:44px; }
       .monogram{
         width:46px; height:46px; border-radius:50%; background:#fff; color:#141210;
-        display:grid; place-items:center; font-weight:900; font-size:19px; letter-spacing:-1.5px; flex:none;
+        display:block; flex:none; object-fit:cover;
       }
       .monogram i{ font-style:normal; transform:translateX(1px); }
       .monogram b{ font-weight:900; transform:translate(-2px, 3px) rotate(8deg); display:inline-block; }
