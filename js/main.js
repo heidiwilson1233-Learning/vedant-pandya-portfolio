@@ -22,13 +22,9 @@
           wipe.style.clipPath = 'inset(0 ' + (p * 100) + '% 0 0)';
           sideL.style.opacity = p <= 0.5 ? 1 : 1 - (p - 0.5) / 0.5;
           sideR.style.opacity = p >= 0.5 ? 1 : p / 0.5;
-          /* Adham's portraits slide in opposite directions as the wipe
-             moves: the painted layer drifts right as the mouse goes left,
-             the photo drifts left as the mouse goes right. Both ease
-             over ~0.5s via the CSS transitions. */
-          var w = hero.getBoundingClientRect().width;
-          wipe.style.transform = 'translateX(' + ((0.5 - p) * w * 0.11) + 'px)';
-          photo.style.transform = 'translateX(' + ((0.5 - p) * w * 0.08) + 'px)';
+          /* The portraits never move: both layers stay perfectly
+             registered, only the wipe edge (clip-path) moves, so the
+             two backgrounds can never merge or show side by side. */
         }
         setSplit(0.5);
         /* The wipe is driven by the mouse anywhere across the full
