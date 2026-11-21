@@ -84,9 +84,9 @@
         display:grid; grid-template-columns: 1fr minmax(320px, 470px) 1fr;
         align-items:center; gap:14px; position:relative;
       }
-      .side{ position:relative; z-index:3; padding-bottom:64px; transition:opacity .35s ease; }
-      .hero[data-active="left"] .side.right{ opacity:.3; }
-      .hero[data-active="right"] .side.left{ opacity:.3; }
+      .side{ position:relative; z-index:3; padding-bottom:64px; }
+      /* Both sides always stay fully readable — moving the cursor
+         never fades the other side's text. */
       .side h2{
         margin:0; font-size:clamp(36px, 5vw, 58px); font-weight:800;
         letter-spacing:-2px; color:var(--ink-strong); line-height:1.05; cursor:default;
@@ -131,20 +131,6 @@
       .portrait .glow.r{ right:0; background:rgba(37,99,235,.12); box-shadow:inset 0 0 0 4px rgba(37,99,235,.9), inset 0 0 80px rgba(37,99,235,.28); }
       .hero[data-active="left"] .portrait .glow.l{ opacity:1; }
       .hero[data-active="right"] .portrait .glow.r{ opacity:1; }
-      /* Dim + blur the side you are NOT on, so the active side stands out.
-         The full face stays visible — the other half is only softened,
-         never hidden or cropped. */
-      .portrait .dim{
-        position:absolute; top:0; bottom:0; width:50%; z-index:2;
-        pointer-events:none; opacity:0; transition:opacity .35s ease;
-        background:rgba(244,239,227,.28);
-        -webkit-backdrop-filter:blur(3px) brightness(.88);
-        backdrop-filter:blur(3px) brightness(.88);
-      }
-      .portrait .dim.l{ left:0; }
-      .portrait .dim.r{ right:0; }
-      .hero[data-active="left"] .portrait .dim.r{ opacity:1; }
-      .hero[data-active="right"] .portrait .dim.l{ opacity:1; }
       .half-label{
         position:absolute; bottom:14px; z-index:3;
         font-family:"IBM Plex Mono", monospace; font-size:11px; letter-spacing:1.6px;
