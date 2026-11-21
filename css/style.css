@@ -396,10 +396,10 @@
         header.site.nav-open nav.main a{ padding:14px 4px; font-size:18px; border-top:1px solid #2a2723; }
         header.site.nav-open .socials{ display:flex; flex-basis:100%; order:4; margin-left:0; padding:6px 0 12px; }
         .hero-grid{ grid-template-columns:1fr; gap:0; }
-        .portrait-wrap{ order:1; margin-top:6px; }
+        .portrait-wrap{ order:2; margin-top:6px; }
         .side{ padding:0; text-align:center; }
         .side p{ margin-left:auto; margin-right:auto; }
-        .side.left{ order:2; padding-top:26px; }
+        .side.left{ order:1; padding-top:6px; }
         .side.right{ order:3; margin-top:24px; }
         .portrait{ max-height:560px; }
         .cards{ margin:0; }
